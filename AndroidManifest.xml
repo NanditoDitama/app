@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Permissions for camera and storage -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_aplikasi"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_circle"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="31">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity android:name=".AddReportActivity"
+            android:exported="true" />
+        <activity android:name=".EditReportActivity"
+            android:exported="true" />
+        <activity android:name=".ReportDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"/>
+        <activity android:name=".ReceivedDataActivity"
+            android:exported="false"/>
+        <activity android:name=".SentDataActivity"
+            android:exported="false"/>
+        <service
+            android:name=".FirestoreListenerService"
+            android:enabled="true"
+            android:exported="false" />
+        <activity android:name=".AdminActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".AdminReportDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditedReportDetailActivity"
+            android:exported="false" />
+        <activity android:name=".ProcessedReportDetailActivity" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.laporan2.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+            <meta-data
+                android:name="com.google.firebase:messaging_auto_init_enabled"
+                android:value="true" />
+        </provider>
+    </application>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+</manifest>

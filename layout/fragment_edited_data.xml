@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewNoData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Tidak ada data yang perlu diubah"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/textViewNewDataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Data Edit"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEditedData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+</LinearLayout>
